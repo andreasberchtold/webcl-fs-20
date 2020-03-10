@@ -23,7 +23,7 @@ const Attribute = value => {
 
     getObs(VALUE, value); // initialize the value at least
 
-    let   convert           = id ;
+    let   convert           = id;
     const setConverter      = converter => {
         convert = converter;
         setConvertedValue(value);

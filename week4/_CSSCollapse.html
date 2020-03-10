@@ -14,13 +14,13 @@
         /* expanded div */
         div.collapsible {
             padding-left: calc(var(--arrow-size) / 2);
-            max-height:   var(--collapse-height);
+            max-height:   var(--collapse-height); /* height can't be animated */
             overflow:     hidden;   /* when height is lowered, do not paint outside */
             transition:   max-height 0.5s ease-out;
         }
 
-        /* collapsed div todo: change css selector*/
-        div {
+        /* collapsed div. done: change css selector*/
+        input[type=checkbox].hidden:checked + label.toggle + div.collapsible {
             max-height: 0;
             transition:  max-height 0.5s ease-out;
         }
@@ -29,7 +29,8 @@
             display: none;
         }
 
-        input[type=checkbox].hidden + label.toggle:before {
+        /* Drawing the triangle */
+        input[type=checkbox].hidden + label.toggle::before {
             content:    '';
             display:    inline-block;
             position:    relative;
@@ -43,13 +44,17 @@
             transition: transform 0.5s;
         }
 
-        /* todo rotate arrow on collapse */
+
+        input[type=checkbox].hidden:checked + label.toggle::before {
+            transform: rotate(-90deg);
+            transition: transform 0.5s;
+        }
 
     </style>
 </head>
 <body>
 
-<p>A section that can be collapsed in pure HTML alnd CSS.</p>
+<p>A section that can be collapsed in pure HTML and CSS.</p>
 
 
 <input id ="toggle" class="hidden" type="checkbox">
@@ -68,8 +73,5 @@
 </p>
 
 
-
-
 </body>
-
 </html>
