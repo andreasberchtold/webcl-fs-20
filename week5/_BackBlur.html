@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+
+        :root {
+            margin:     0;
+            padding:    0;
+            box-sizing: border-box;
+            font-family: Verdana, "sans-serif";
+        }
+
+        main {
+            display: grid;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .rainbow {
+            /*display: inline-block;*/
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+            text-transform: uppercase;
+            background: #9ae69c88;
+            padding: 1em;
+            border-radius: 2em;
+            position: relative;
+            z-index: 0;
+        }
+
+        /* todo: make a rainbow-colored shadow by blurring a positioned background */
+
+        .rainbow::before {
+            content: '';
+            background: linear-gradient(90deg, turquoise, lightcoral, lightskyblue, aquamarine);
+            position: absolute;
+            top:    -5px;
+            bottom: -5px;
+            left:   -5px;
+            right:  -5px;
+            z-index: -1;
+            border-radius: 2em;
+
+            filter: blur(.5em);
+        }
+
+        .rainbow:hover::before {
+            background: lightcoral;
+        }
+
+
+    </style>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<main>
+    <div>
+        <a class="rainbow" href="#">Button</a>
+    </div>
+</main>
+
+
+
+</body>
+
+</html>
