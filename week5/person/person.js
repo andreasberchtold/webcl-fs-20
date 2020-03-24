@@ -13,7 +13,7 @@ const Person = () => {                               // facade
 
     // lastnameAttr.setConverter( input => input.toUpperCase() );
     // lastnameAttr.setValidator( input => input.length >= 3   );
-
+    // lastnameAttr.setValidator(input => input.length <= 10);
     return {
         firstname:          firstnameAttr,
         lastname:           lastnameAttr,
