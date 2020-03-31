@@ -1,5 +1,5 @@
 import { Attribute, LABEL }                                 from "../presentationModel/presentationModel.js";
-import { listItemProjector, formProjector, pageCss }        from "./personTableProjector.js";
+import { listItemProjector, formProjector, pageCss }        from "./tableProjector-Joel_Jani-Davide_Valerio.js";
 
 export { MasterView, DetailView, Person, NoPerson, ALL_ATTRIBUTE_NAMES }
 
